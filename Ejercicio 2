@@ -1,0 +1,44 @@
+class Coche:
+    def __init__(self, marca, modelo, año_fabricacion):
+        self.marca = marca
+        self.modelo = modelo
+        self.añofabricacion = año_fabricacion
+        
+    def obtener_años(self):
+        return 2025 - self.añofabricacion  
+         
+    def obtener_marca(self):
+        return self.marca
+    
+    def establecer_marca(self, marca):
+        self.marca = marca
+    
+    def obtener_modelo(self):
+        return self.modelo
+    
+    def establecer_modelo(self, modelo):
+        self.modelo = modelo  
+    
+    def obtener_año_fabricacion(self):
+        return self.añofabricacion
+    
+    def establecer_año_fabricacion(self, año_fabricacion):
+        self.añofabricacion = año_fabricacion  
+    
+if __name__ == "__main__":
+    coche1 = Coche("Peugeot", "208", 2020)
+    print(f"Marca: {coche1.obtener_marca()}")
+    print(f"Modelo: {coche1.obtener_modelo()}")
+    print(f"Año de fabricación: {coche1.obtener_año_fabricacion()}")
+    print(f"Años desde fabricación: {coche1.obtener_años()} años")
+
+
+    coche1.establecer_marca("Ford")
+    coche1.establecer_modelo("Mustang")
+    coche1.establecer_año_fabricacion(1964)
+
+    print("\nDespués de actualizar:")
+    print(f"Marca: {coche1.obtener_marca()}")
+    print(f"Modelo: {coche1.obtener_modelo()}")
+    print(f"Año de fabricación: {coche1.obtener_año_fabricacion()}")
+    print(f"Años desde fabricación: {coche1.obtener_años()} años")
