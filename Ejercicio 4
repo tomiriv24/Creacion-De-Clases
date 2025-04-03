@@ -1,0 +1,32 @@
+class Rectangulo:
+    def __init__(self,longitud,anchura):
+        self.longitud=longitud
+        self.anchura=anchura
+        
+    def calcular_area(self):
+        area=self.longitud*self.anchura
+        return area
+        
+    def calcular_perimetro(self):
+        perimetro=(self.longitud+self.anchura)*2
+        return perimetro
+    
+    def obtener_longitud(self):
+        return self.longitud
+    
+    def establecer_longitud(self,longitud):
+        self.longitud=longitud    
+        
+    def obtener_anchura(self):
+        return self.anchura
+    
+    def establecer_anchura(self,anchura):
+        self.anchura=anchura        
+    
+    
+if __name__ == "__main__":
+    rectangulo1 = Rectangulo(8,5)
+    print(f"Longitud: {rectangulo1.obtener_longitud()}")
+    print(f"Anchura: {rectangulo1.obtener_anchura()}")
+    print(f"Area: {rectangulo1.calcular_area()}")
+    print(f"Perimetro: {rectangulo1.calcular_perimetro()}")        
