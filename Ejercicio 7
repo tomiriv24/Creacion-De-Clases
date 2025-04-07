@@ -1,0 +1,31 @@
+class Banco:
+    def __init__(self, nombre, tasa_interes):
+        self.nombre = nombre
+        self.tasa_interes = tasa_interes
+
+    def obtener_nombre(self):
+        return self.nombre
+
+    def establecer_nombre(self, nombre):
+        self.nombre = nombre
+
+    def calcular_interes(self, cantidad, años):
+        tasa_decimal = self.tasa_interes / 100
+        monto_final = cantidad * (1 + tasa_decimal) ** años
+        interes = monto_final - cantidad
+        return interes
+
+    def tiempo_duplicar(self):
+        if self.tasa_interes == 0:
+            return float('inf')  
+        else:
+            return 72 / self.tasa_interes
+
+if __name__ == "__main__":
+    banco1 = Banco("Banco Santander", 5)
+    cantidad_inicial = 250000
+    años = 3
+
+    print(f"Nombre: {banco1.obtener_nombre()}")
+    print(f"Interés ganado en {años} años sobre ${cantidad_inicial}: ${banco1.calcular_interes(cantidad_inicial, años):.2f}")
+    print(f"Años aproximados para duplicar el dinero: {banco1.tiempo_duplicar():.2f}")
