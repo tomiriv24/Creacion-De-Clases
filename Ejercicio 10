@@ -1,0 +1,49 @@
+class Libro:
+    def __init__(self, titulo, autor, genero, num_paginas):
+        self.titulo = titulo
+        self.autor = autor
+        self.genero = genero
+        self.num_paginas = num_paginas
+
+  
+    def obtener_titulo(self):
+        return self.titulo
+
+    def obtener_autor(self):
+        return self.autor
+
+    def obtener_genero(self):
+        return self.genero
+
+    def obtener_num_paginas(self):
+        return self.num_paginas
+
+    
+    def establecer_titulo(self, nuevo_titulo):
+        self.titulo = nuevo_titulo
+
+    def establecer_autor(self, nuevo_autor):
+        self.autor = nuevo_autor
+
+    def establecer_genero(self, nuevo_genero):
+        self.genero = nuevo_genero
+
+    def establecer_num_paginas(self, nuevo_num_paginas):
+        self.num_paginas = nuevo_num_paginas
+
+  
+    def es_ficcion(self):
+        generos_ficcion = ["ficción", "novela", "fantasía", "ciencia ficción", "misterio"]
+        return self.genero.lower() in generos_ficcion
+
+libro1 = Libro("1984", "George Orwell", "Ficción", 328)
+
+print("Título:", libro1.obtener_titulo())
+print("Autor:", libro1.obtener_autor())
+print("Género:", libro1.obtener_genero())
+print("Número de páginas:", libro1.obtener_num_paginas())
+
+if libro1.es_ficcion():
+    print("Este libro es de ficción.")
+else:
+    print("Este libro no es de ficción.")
